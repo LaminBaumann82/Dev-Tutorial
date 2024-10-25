@@ -13,7 +13,7 @@
 
 - Make sure to select following components while installing Visual Studio
 
-  ![Selection for components](./Images/InstallVisualStudioSelectComponents.jpg?raw=true "Select components for VS")
+  ![Selection for components](/Images/InstallVisualStudioSelectComponents.jpg?raw=true "Select components for VS")
 
 ## Getting Started
 
