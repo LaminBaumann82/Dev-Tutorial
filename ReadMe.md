@@ -1,6 +1,6 @@
 # Dev Tutorials
 ## This project is in progress... 
 
-This will be a collection of useful informations for C#-, and Blazor Devs who just started their journey or need a little bit of refresh on that topic.
+This will be a collection of useful information for C# and Blazor developers who have just started their journey or need a bit of a refresher on the topic.
 
  
