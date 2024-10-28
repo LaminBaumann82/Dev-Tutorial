@@ -1,9 +1,11 @@
-# C#
+# C# Advanced
 
-## Table of contents
+# Table of contents
+## Prerequisites
 - [Setting up Visual Studio](#setting-up-visual-studio)
 - [Getting Started](#getting-started)
-## C# Advanced]
+  - [Create a new Project](create-a-new-project)   
+
 ## Reference Types and Value Types
 - [Enums](#enums)
 - [Structs](#structs)
@@ -33,11 +35,12 @@
 - [Lazy](#lazy)
 - [Events](#events)
 
-## Multi-project 
+## [Multi-project](#multi-project)
 
-## Internal Access Modifier
 
-## NuGet Packages
+## [Internal Access Modifier](#internal-access-modifier)
+
+## [NuGet Packages](#nuget-packages)
 
 ## Async, Parallel and Multi-Threading
 - [Threads](#threads)
@@ -45,6 +48,14 @@
 - [Task Objects](#task-objects)
 - [Async/Await](#asyncawait)
 - [Cancellation Token](#cancellation-token)
+
+
+
+
+
+
+
+
 
 ## Setting up Visual Studio
 
@@ -56,25 +67,18 @@
 
   ![Alt Text](Images/InstallVisualStudioSelectComponents.JPG?raw=true "Select components for VS")
 
-### set up Visual Studio
-
-
-
 
 ## Getting Started
 ### Create a new Project
 
-
-## C# Advanced
-
 ### Reference Types and Value Types
 #### Enums
-#### Stucts
+#### Structs
 #### Equality Problem
 #### Records
 
 ### OOP Object-Oriented Programming
-#### Inheritence
+#### Inheritance
 #### Interfaces
 #### Abstract Classes
 #### Protected and Virtual
