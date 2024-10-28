@@ -1,9 +1,9 @@
 # C#
 
 ## Table of contents
-[Setting up Visual Studio](#setting-up-visual-studio)
-[Getting Started](#getting-started)
-[C# Advanced](#c-advanced)
+- [Setting up Visual Studio](#setting-up-visual-studio)
+- [Getting Started](#getting-started)
+- [C# Advanced](#c-advanced)
 ## Reference Types and Value Types
 - [Enums](#enums)
 - [Structs](#structs)
