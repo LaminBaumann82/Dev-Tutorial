@@ -4,7 +4,6 @@
 
 [Setting up Visual Studio](#setting-up-visual-studio)
 [Getting Started](#getting-started)
-[C# Basics](#c-basics)
 [C# Advanced](#c-advanced)
 
 ## Setting up Visual Studio
@@ -24,8 +23,6 @@
 
 ## Getting Started
 ### Create a new Project
-
-## C# Basics
 
 
 ## C# Advanced
