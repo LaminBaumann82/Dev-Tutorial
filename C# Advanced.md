@@ -1,10 +1,50 @@
 # C#
 
 ## Table of contents
-
 [Setting up Visual Studio](#setting-up-visual-studio)
 [Getting Started](#getting-started)
 [C# Advanced](#c-advanced)
+## Reference Types and Value Types
+- [Enums](#enums)
+- [Structs](#structs)
+- [Equality Problem](#equality-problem)
+- [Records](#records)
+
+## OOP Object-Oriented Programming
+- [Inheritance](#inheritance)
+- [Interfaces](#interfaces)
+- [Abstract Classes](#abstract-classes)
+- [Protected and Virtual](#protected-and-virtual)
+- [Composition](#composition)
+- [Generics](#generics)
+- [Tuples](#tuples)
+
+## Binary and String Data
+- [Encoding / Decoding](#encoding--decoding)
+- [Streams](#streams)
+- [Reading / Writing Files](#reading--writing-files)
+- [Using and Disposable](#using-and-disposable)
+- [XML and JSON](#xml-and-json)
+
+## Methods and Functions
+- [Callbacks and Delegates](#callbacks-and-delegates)
+- [Extension Methods](#extension-methods)
+- [LINQ](#linq)
+- [Lazy](#lazy)
+- [Events](#events)
+
+## Multi-project 
+
+## Internal Access Modifier
+
+## NuGet Packages
+
+## Async, Parallel and Multi-Threading
+- [Threads](#threads)
+- [Background Workers](#background-workers)
+- [Task Objects](#task-objects)
+- [Async/Await](#asyncawait)
+- [Cancellation Token](#cancellation-token)
 
 ## Setting up Visual Studio
 
