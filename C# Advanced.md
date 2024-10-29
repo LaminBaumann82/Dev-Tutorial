@@ -6,6 +6,11 @@
 - [Getting Started](#getting-started)
   - [Create a new Project](create-a-new-project)   
 
+## Prerequisites
+To run the code examples in this Tutorial you will need to take some steps. 
+
+1. [Install Visual Studio](/VisualStudio)
+
 ## Reference Types and Value Types
 
 Classes are reference types in C#. The primitive types like int, float, double, string, bools are value types.
