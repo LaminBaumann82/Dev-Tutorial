@@ -2,7 +2,7 @@
 
 # Table of contents
 ## Prerequisites
-- [Setting up Visual Studio](#setting-up-visual-studio)
+- [Set up Visual Studio](#set-up-visual-studio)
 - [Getting Started](#getting-started)
   - [Create a new Project](create-a-new-project)   
 
@@ -177,7 +177,7 @@ When we use reference types we are passing around a reference to that object in 
 
 
 
-## Setting up Visual Studio
+## Set up Visual Studio
 
 ### Install VS
 - Download the lates release of Visual Studio [Visual Studion Community 22](https://visualstudio.microsoft.com/de/downloads/)
