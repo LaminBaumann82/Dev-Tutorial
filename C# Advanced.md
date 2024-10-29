@@ -8,6 +8,7 @@ To run the code examples in this Tutorial you will need to take some steps. If y
 
 
 ## Reference Types and Value Types
+- [
 - [Enums](#enums)
 - [Structs](#structs)
 - [Equality Problem](#equality-problem)
@@ -57,111 +58,111 @@ When we use reference types we are passing around a reference to that object in 
 ### Enums
 The use of Enums should be only in the case that you have a fixed set of values witch "never" change. enums look like strings but in fact they are numeric values.
 
-  ```
+  ```c#
  public class Enums
-  {
+{
     public void Run()
-  {
-      // we can cast an enum to a int:
-      int january = (int)MonthsOfYear.January;
-  
-      // but we can not cast an enum to a string. following code will not compile:
-      // string january = (string)MonthsOfYear.January;
-  
-      // this might be iritating because when we write those enums to the console they look like a string.
-      Console.WriteLine($"Enum Value not casted: {MonthsOfYear.January}");
-      Console.WriteLine($"Enum Value casted: {(int)MonthsOfYear.January}");
-  
-      // To convert an enum to a string representation, we use the ToString() method.
-      string januaryString = MonthsOfYear.January.ToString();
-  
-      // To convert a string back to an enum value, we use the Enum.Parse method.
-      MonthsOfYear januaryEnum = (MonthsOfYear)Enum.Parse(typeof(MonthsOfYear), "January");
-      MonthsOfYear januaryEnum2 = Enum.Parse<MonthsOfYear>("January");
-  
-      // There’s also a TryParse variation for safer parsing.
-      MonthsOfYear januaryEnum3;
-      bool parseSucceeded = Enum.TryParse("January", out januaryEnum3);
-      Console.WriteLine($"Enum {(parseSucceeded ? "Was Parsed" : "Was Not Parsed")}: {januaryEnum3}");
-  
-      // We can retrieve all values of the enum using Enum.GetValues.
-      Console.WriteLine("All Enum Values:");
-      foreach (MonthsOfYear month in Enum.GetValues(typeof(MonthsOfYear)))
-      {
-          Console.WriteLine($"Enum Value: {(int)month}");
-      }
-  
-      // Enum.GetNames lets us get a list of all the enum names.
-      Console.WriteLine("All Enum Names:");
-      foreach (string month in Enum.GetNames(typeof(MonthsOfYear)))
-      {
-          Console.WriteLine($"Enum Name: {month}");
-      }
-  
-      // It’s possible to cast an integer to an enum, even if the integer doesn’t match any valid enum member.
-      MonthsOfYear invalidMonth = (MonthsOfYear)13;
-      Console.WriteLine($"Invalid Enum Value: {invalidMonth}");
-  
-      // With the [Flags] attribute and values set to powers of 2, we can combine enum flags.
-  
-      // We can combine flags like this:
-      Permissions readWrite = Permissions.Read | Permissions.Write;
-      Console.WriteLine($"RW: {readWrite}");
-  
-      // We can also check if a specific flag is set with bitwise operations.
-      bool canRead = (readWrite & Permissions.Read) == Permissions.Read;
-      bool canWrite = (readWrite & Permissions.Write) == Permissions.Write;
-      bool canExecute = (readWrite & Permissions.Execute) == Permissions.Execute;
-      Console.WriteLine($"Can Read: {canRead}");
-      Console.WriteLine($"Can Write: {canWrite}");
-      Console.WriteLine($"Can Execute: {canExecute}");
-  
-  }
-  
-  // define an enum:
-  enum MonthsOfYear
-  {
-      January,
-      February,
-      March,
-      April,
-      Mai,
-      June,
-      July,
-      August,
-      September,
-      October,
-      November,
-      December
-  }
-  
-  // another way to define an enum:
-  enum MonthsOfYear2
-  {
-      January = 1,
-      February = 2,
-      March = 3,
-      April = 4,
-      Mai = 5,
-      June = 6,
-      July = 7,
-      August = 8,
-      September = 9,
-      October = 10,
-      November = 11,
-      December = 12
-  }
-  
-  // enums can also be used as "flags" which means that we can combine them
-  // using bitwise operators
-  [Flags]
-  enum Permissions
-  {
-      None = 0,       // 0000 0000
-      Read = 1,       // 0000 0001
-      Write = 2,      // 0000 0010
-      Execute = 4     // 0000 0100
-  }
+    {
+        // we can cast an enum to a int:
+        int january = (int)MonthsOfYear.January;
+
+        // but we can not cast an enum to a string. following code will not compile:
+        // string january = (string)MonthsOfYear.January;
+
+        // this might be iritating because when we write those enums to the console they look like a string.
+        Console.WriteLine($"Enum Value not casted: {MonthsOfYear.January}");
+        Console.WriteLine($"Enum Value casted: {(int)MonthsOfYear.January}");
+
+        // To convert an enum to a string representation, we use the ToString() method.
+        string januaryString = MonthsOfYear.January.ToString();
+
+        // To convert a string back to an enum value, we use the Enum.Parse method.
+        MonthsOfYear januaryEnum = (MonthsOfYear)Enum.Parse(typeof(MonthsOfYear), "January");
+        MonthsOfYear januaryEnum2 = Enum.Parse<MonthsOfYear>("January");
+
+        // There’s also a TryParse variation for safer parsing.
+        MonthsOfYear januaryEnum3;
+        bool parseSucceeded = Enum.TryParse("January", out januaryEnum3);
+        Console.WriteLine($"Enum {(parseSucceeded ? "Was Parsed" : "Was Not Parsed")}: {januaryEnum3}");
+
+        // We can retrieve all values of the enum using Enum.GetValues.
+        Console.WriteLine("All Enum Values:");
+        foreach (MonthsOfYear month in Enum.GetValues(typeof(MonthsOfYear)))
+        {
+            Console.WriteLine($"Enum Value: {(int)month}");
+        }
+
+        // Enum.GetNames lets us get a list of all the enum names.
+        Console.WriteLine("All Enum Names:");
+        foreach (string month in Enum.GetNames(typeof(MonthsOfYear)))
+        {
+            Console.WriteLine($"Enum Name: {month}");
+        }
+
+        // It’s possible to cast an integer to an enum, even if the integer doesn’t match any valid enum member.
+        MonthsOfYear invalidMonth = (MonthsOfYear)13;
+        Console.WriteLine($"Invalid Enum Value: {invalidMonth}");
+
+        // With the [Flags] attribute and values set to powers of 2, we can combine enum flags.
+
+        // We can combine flags like this:
+        Permissions readWrite = Permissions.Read | Permissions.Write;
+        Console.WriteLine($"RW: {readWrite}");
+
+        // We can also check if a specific flag is set with bitwise operations.
+        bool canRead = (readWrite & Permissions.Read) == Permissions.Read;
+        bool canWrite = (readWrite & Permissions.Write) == Permissions.Write;
+        bool canExecute = (readWrite & Permissions.Execute) == Permissions.Execute;
+        Console.WriteLine($"Can Read: {canRead}");
+        Console.WriteLine($"Can Write: {canWrite}");
+        Console.WriteLine($"Can Execute: {canExecute}");
+
+    }
+
+    // define an enum:
+    enum MonthsOfYear
+    {
+        January,
+        February,
+        March,
+        April,
+        Mai,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
+    }
+
+    // another way to define an enum:
+    enum MonthsOfYear2
+    {
+        January = 1,
+        February = 2,
+        March = 3,
+        April = 4,
+        Mai = 5,
+        June = 6,
+        July = 7,
+        August = 8,
+        September = 9,
+        October = 10,
+        November = 11,
+        December = 12
+    }
+
+    // enums can also be used as "flags" which means that we can combine them
+    // using bitwise operators
+    [Flags]
+    enum Permissions
+    {
+        None = 0,       // 0000 0000
+        Read = 1,       // 0000 0001
+        Write = 2,      // 0000 0010
+        Execute = 4     // 0000 0100
+    }
 }
  ``` 
 ### Structs
