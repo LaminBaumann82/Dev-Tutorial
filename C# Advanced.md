@@ -4,7 +4,7 @@
 
 ## Prerequisites
 To run the code examples in this Tutorial you will need to take some steps. If you don't allready done it please finish the Set up Visual Studio Tutorial. 
-[Set up Visual Studio](/set-up-visual-studio.md)
+[Set up Visual Studio](/Set up Visual Studio.md)
 
 
 ## Reference Types and Value Types
