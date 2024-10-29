@@ -1,15 +1,11 @@
 # C# Advanced
 
 # Table of contents
-## Prerequisites
-- [Set up Visual Studio](#set-up-visual-studio)
-- [Getting Started](#getting-started)
-  - [Create a new Project](create-a-new-project)   
 
 ## Prerequisites
-To run the code examples in this Tutorial you will need to take some steps. 
+To run the code examples in this Tutorial you will need to take some steps. If you don't allready done it please finish the Set up Visual Studio Tutorial. 
+[Set up Visual Studio](/set-up-visual-studio.md)
 
-1. [Install Visual Studio](/VisualStudio)
 
 ## Reference Types and Value Types
 
@@ -157,7 +153,6 @@ When we use reference types we are passing around a reference to that object in 
 
 ## [Multi-project](#multi-project)
 
-
 ## [Internal Access Modifier](#internal-access-modifier)
 
 ## [NuGet Packages](#nuget-packages)
@@ -169,27 +164,6 @@ When we use reference types we are passing around a reference to that object in 
 - [Async/Await](#asyncawait)
 - [Cancellation Token](#cancellation-token)
 
-
-
-
-
-
-
-
-
-## Set up Visual Studio
-
-### Install VS
-- Download the lates release of Visual Studio [Visual Studion Community 22](https://visualstudio.microsoft.com/de/downloads/)
-- Install it and following the next steps
-
-- Make sure to select following components while installing Visual Studio
-
-  ![Alt Text](Images/InstallVisualStudioSelectComponents.JPG?raw=true "Select components for VS")
-
-
-## Getting Started
-### Create a new Project
 
 ### Reference Types and Value Types
 #### Enums
