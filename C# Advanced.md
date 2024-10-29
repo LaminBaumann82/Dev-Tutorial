@@ -8,13 +8,54 @@ To run the code examples in this Tutorial you will need to take some steps. If y
 
 
 ## Reference Types and Value Types
+- [Enums](#enums)
+- [Structs](#structs)
+- [Equality Problem](#equality-problem)
+- [Records](#records)
 
+## OOP Object-Oriented Programming
+- [Inheritance](#inheritance)
+- [Interfaces](#interfaces)
+- [Abstract Classes](#abstract-classes)
+- [Protected and Virtual](#protected-and-virtual)
+- [Composition](#composition)
+- [Generics](#generics)
+- [Tuples](#tuples)
+
+## Binary and String Data
+- [Encoding / Decoding](#encoding--decoding)
+- [Streams](#streams)
+- [Reading / Writing Files](#reading--writing-files)
+- [Using and Disposable](#using-and-disposable)
+- [XML and JSON](#xml-and-json)
+
+## Methods and Functions
+- [Callbacks and Delegates](#callbacks-and-delegates)
+- [Extension Methods](#extension-methods)
+- [LINQ](#linq)
+- [Lazy](#lazy)
+- [Events](#events)
+
+## [Multi-project](#multi-project)
+
+## [Internal Access Modifier](#internal-access-modifier)
+
+## [NuGet Packages](#nuget-packages)
+
+## Async, Parallel and Multi-Threading
+- [Threads](#threads)
+- [Background Workers](#background-workers)
+- [Task Objects](#task-objects)
+- [Async/Await](#asyncawait)
+- [Cancellation Token](#cancellation-token)
+
+
+## Reference Types and Value Types
 Classes are reference types in C#. The primitive types like int, float, double, string, bools are value types.
 When we use reference types we are passing around a reference to that object in the memory.
 
-
-- [Enums](#enums)
-  The use of Enums should be only in the case that you have a fixed set of values witch "never" change. enums look like strings but in fact they are numeric values.
+### Enums
+The use of Enums should be only in the case that you have a fixed set of values witch "never" change. enums look like strings but in fact they are numeric values.
 
   ```
   public Class Enums
@@ -123,88 +164,45 @@ When we use reference types we are passing around a reference to that object in 
     }
 
   }
-  
-- [Structs](#structs)
-- [Equality Problem](#equality-problem)
-- [Records](#records)
+ ``` 
+### Structs
+### Equality Problem
+### Records
 
 ## OOP Object-Oriented Programming
-- [Inheritance](#inheritance)
-- [Interfaces](#interfaces)
-- [Abstract Classes](#abstract-classes)
-- [Protected and Virtual](#protected-and-virtual)
-- [Composition](#composition)
-- [Generics](#generics)
-- [Tuples](#tuples)
+### Inheritance
+### Interfaces
+### Abstract Classes
+### Protected and Virtual
+### Composition
+### Generics
+### Tuples
 
 ## Binary and String Data
-- [Encoding / Decoding](#encoding--decoding)
-- [Streams](#streams)
-- [Reading / Writing Files](#reading--writing-files)
-- [Using and Disposable](#using-and-disposable)
-- [XML and JSON](#xml-and-json)
+### Encoding / Decoding
+### Streams
+### Reading / Writing Files
+### Using and Disposable
+### XML and JSON
 
 ## Methods and Functions
-- [Callbacks and Delegates](#callbacks-and-delegates)
-- [Extension Methods](#extension-methods)
-- [LINQ](#linq)
-- [Lazy](#lazy)
-- [Events](#events)
+### Callbacks and Delegates
+### Extension Methods
+### LINQ
+### Lazy
+### Events
 
-## [Multi-project](#multi-project)
+## Multi-project 
 
-## [Internal Access Modifier](#internal-access-modifier)
+## Internal access modifier
 
-## [NuGet Packages](#nuget-packages)
+## NuGet Packages
 
 ## Async, Parallel and Multi-Threading
-- [Threads](#threads)
-- [Background Workers](#background-workers)
-- [Task Objects](#task-objects)
-- [Async/Await](#asyncawait)
-- [Cancellation Token](#cancellation-token)
-
-
-### Reference Types and Value Types
-#### Enums
-#### Structs
-#### Equality Problem
-#### Records
-
-### OOP Object-Oriented Programming
-#### Inheritance
-#### Interfaces
-#### Abstract Classes
-#### Protected and Virtual
-#### Composition
-#### Generics
-#### Tuples
-
-### Binary and String Data
-#### Encoding / Decoding
-#### Streams
-#### Reading / Writing Files
-#### Using and Disposable
-#### XML and JSON
-
-### Methods and Functions
-#### Callbacks and Delegates
-#### Extension Methods
-#### LINQ
-#### Lazy
-#### Events
-
-### Multi-project 
-
-### Internal access modifier
-
-### NuGet Packages
-
-### Async, Parallel and Multi-Threading
-#### Threads
-#### Background Workers
-#### Task Objects
-#### Async/Await
-#### Cancellation Token
+### Threads
+### Background Workers
+### Task Objects
+### Async/Await
+### Cancellation Token
 
 
