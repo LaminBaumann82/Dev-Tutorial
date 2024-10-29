@@ -11,11 +11,12 @@
 
 ## Install Visual Studio
 - Download the lates release of Visual Studio [Visual Studion Community 22](https://visualstudio.microsoft.com/de/downloads/)
-- Install it and following the next steps
+- Run the VisualStudioSetup.exe and proceed through the provided steps.
 
 - Make sure to select following components while installing Visual Studio
 
   ![Alt Text](Images/InstallVisualStudioSelectComponents.JPG?raw=true "Select components for VS")
+
 
 ## Configure Visual Studio
 
