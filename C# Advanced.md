@@ -11,6 +11,7 @@ To run the code examples in this Tutorial you will need to take some steps. If y
 - [Basics Of Classes and Value Types](#basics-of-classes-and-value-types)
 - [Enums](#enums)
 - [Structs](#structs)
+- [Enum vs Struct](#enum-vs-struct)
 - [Equality Problem](#equality-problem)
 - [Records](#records)
 
@@ -249,6 +250,126 @@ The use of Enums should only be in cases where you have a fixed set of values th
 
  ``` 
 ### Structs
+
+Structs are user-defined types that are categorized as value types, which means they are stored directly in memory rather than through a reference. This distinction sets them apart from classes, which are reference types and involve a more complex memory allocation process.
+
+Structs are commonly used to represent small, simple data structures, such as points in a coordinate system or colors, where performance and memory efficiency are essential. When a struct is passed to a method, a copy is made, which can help avoid unintentional modifications to the original data. This behavior makes structs suitable for scenarios where immutability or simplicity is desired.
+
+Developers often choose structs to minimize the overhead associated with heap allocation and garbage collection. However, it’s important to consider that structs should be used judiciously, as they can also lead to performance issues if they are too large or complex due to the cost of copying.
+
+In summary, structs in C# provide an efficient way to encapsulate small amounts of data while adhering to value semantics, making them a valuable tool in the programmer’s toolkit.
+
+
+```c#
+public class StructsDemo
+{
+    public void ExecuteDemo()
+    {
+        // A struct is classified as a value type, although it may resemble a class in appearance.
+
+        // What distinguishes a struct from a class?
+        // When should we choose a struct instead of a class?
+        // The primary distinction is that structs are value types while classes are reference types.
+        // - Structs are stored on the stack, while classes reside on the heap.
+        // - When passed to a method, a struct is copied, whereas a class is passed by reference.
+
+        // Example illustrating how a struct is copied when passed to a method:
+        void UpdatePoint(Point point)
+        {
+            point.X = 111; // Modifying the copy will not affect the original.
+            point.Y = 222; 
+        }
+
+        var initialPoint = new Point()
+        {
+            X = 123,
+            Y = 456
+        };
+        
+        Console.WriteLine(
+            $"Initial Point before UpdatePoint: " +
+            $"{initialPoint.X}, {initialPoint.Y}");
+        UpdatePoint(initialPoint);
+        Console.WriteLine(
+            $"Initial Point after UpdatePoint: " +
+            $"{initialPoint.X}, {initialPoint.Y}");
+
+        // Structs can be misleading due to their similarity to classes,
+        // leading to confusion about their usage.
+        // Here are some guidelines:
+        // - Use a struct for small, simple objects that you wish to pass by value.
+        // - Choose a struct to avoid the overhead of heap allocation and garbage collection.
+        // I often think of simple geometric types like a Point,
+        // Color, Rectangle, or other geometric figures.
+    }
+
+    // Example of a struct definition
+    public struct Point
+    {
+        public int X;
+        public int Y;
+    }
+
+    // The same struct defined with properties for better encapsulation:
+    public struct PointWithProperties
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+    }
+
+    // The same struct but includes a constructor for initialization:
+    public struct PointWithConstructor
+    {
+        public PointWithConstructor(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+
+        public int X { get; set; }
+        public int Y { get; set; }
+    }
+
+    // A struct can also include methods, similar to classes:
+    public struct PointWithMethod
+    {
+        public int X;
+        public int Y;
+
+        public void Move(int deltaX, int deltaY)
+        {
+            X += deltaX;
+            Y += deltaY;
+        }
+    }
+}
+
+```
+### Enum vs Struct
+Enums and structs are both useful constructs in C#, but they serve different purposes and are used in different scenarios. Here’s a brief overview of when to use each:
+
+When to Use Enums
+Fixed Set of Related Constants: Use enums when you need a named group of related constants that represent discrete values. For example, days of the week, colors, or states of an application.
+
+Readability and Maintainability: Enums improve code readability and maintainability. Instead of using magic numbers or strings, enums provide meaningful names, making the code easier to understand.
+
+Type Safety: Enums provide type safety by restricting the variable to one of the predefined values. This helps prevent errors associated with using invalid values.
+
+Comparative Operations: Enums can be easily compared using equality or other operators, making them suitable for situations where you need to switch or compare discrete values.
+
+When to Use Structs
+Grouping Related Data: Use structs when you need to group multiple related fields into a single entity. For example, a struct could represent a point in 2D space with X and Y coordinates.
+
+Value Type Behavior: Structs are value types, which means they are copied when passed around. Use them when you want the value semantics (copying behavior) to prevent unintended modifications.
+
+Simple Data Structures: Structs are best suited for small, simple data structures. Avoid using structs for large or complex types, as copying them can incur performance overhead.
+
+Immutability: If you want to create an immutable type (i.e., its values cannot be changed after creation), structs are a good choice when combined with read-only properties.
+
+Summary
+Use Enums when you need a fixed set of related named constants for better readability and type safety.
+Use Structs when you want to encapsulate related data in a single value type, especially for small, simple data structures that benefit from value semantics.
+In conclusion, enums and structs are both valuable in C# programming, but they should be chosen based on the specific requirements of the task at hand.
 ### Equality Problem
 ### Records
 
