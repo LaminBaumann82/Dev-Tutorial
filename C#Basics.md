@@ -8,16 +8,45 @@ If you run in to problems or unexpected behaviour please check out the [SetUpVis
 
 
 ## Table of Content
-1. [Variables](#variables)
-2. [Data Types](#data-types)
-3. [Control Structures](#control-structures)
-    - [If-Else](#if-else)
-    - [Switch](#switch)
-    - [Loops](#loops)
-4. [Functions](#functions)
-5. [Arrays](#arrays)
-6. [Classes and Objects](#classes-and-objects)
-7. [Exception Handling](#exception-handling)
+[Variables](#variables)
+   - [Basics](#basics)
+   - [Data Types](#data-types)
+       - [Integer](#integer)
+       - [Float and Double](#float-double)
+       - [String](#string)
+       - [Boolean](#boolean)
+       - [Date/Time](#date/time)
+   - [Handling](#handling)
+       - [Casting](#casting)
+       - [Parsing](#parsing)
+       - [Implicit vs Explicit](#implicit-vs-explicit)
+
+[Control Structures](#control-structures)
+   - [If-Else](#if-else)
+   - [Switch](#switch)
+   - [Loops](#loops)
+   - [Ternary Operator](#ternary-operator)
+   - [Expressions](#expressions)
+
+[Functions](#functions)
+   - [Method vs Function](#method-vs-function)
+   - [Arguments and Parameters](#arguments-and-parameters)
+   - [Return type](#return-type)
+     
+[Arrays](#arrays)
+
+[Lists](#lists)
+
+[Dictionaries](#dictionaries)
+
+[Classes and Objects](#classes-and-objects)
+   - [Fields vs Properities](#fields-vs-properties)
+   - [Static vs instances](#static-vs-instances)
+   - [Constructors](#constructors)
+
+[Exception Handling](#exception-handling)
+   - [Try/Catch](#try/catch)
+   - [Debugging](#debugging)
 
 ---
 
@@ -154,7 +183,8 @@ do {
     count++;
 } while (count < 5);
 ```
-
+### Ternary Operator
+### Expressions
 ---
 
 ## Functions
@@ -174,7 +204,9 @@ You can call a function and use its return value.
 int sum = Add(5, 3); // sum now holds the value 8
 Console.WriteLine("Sum is: " + sum);
 ```
-
+### Method vs Function
+### Arguments and Parameters
+### Return type
 ---
 
 ## Arrays
@@ -199,7 +231,9 @@ for (int i = 0; i < numbers.Length; i++) {
     Console.WriteLine(numbers[i]);
 }
 ```
-
+## Lists
+## Dictionaries
+## 
 ---
 
 ## Classes and Objects
@@ -224,12 +258,14 @@ myCar.Make = "Toyota"; // Setting properties
 myCar.Model = "Corolla";
 myCar.DisplayInfo(); // Calling a method
 ```
-
+### Fields vs Properties
+### Static vs Instances
+### Constructors
 ---
 
 ## Exception Handling
 Exception handling is a way to respond to runtime errors in a controlled manner. It prevents the program from crashing and allows for graceful error management.
-
+### Try/Catch
 ### Try-Catch Block
 You can use `try` to write code that might throw an exception and `catch` to handle that exception.
 
@@ -241,7 +277,7 @@ try {
     Console.WriteLine("Error: " + ex.Message);
 }
 ```
-
+### Debugging
 ---
 
 ## Summary
