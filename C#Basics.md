@@ -9,7 +9,7 @@ If you run in to problems or unexpected behaviour please check out the [SetUpVis
 
 ## Table of Content
 [Variables](#variables)
-   - [Basics](#basics)
+   - [Declaration and Initialization](#declaration-and-initialization)
    - [Data Types](#data-types)
        - [Integer](#integer)
        - [Float and Double](#float-double)
