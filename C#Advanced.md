@@ -38,11 +38,11 @@ To run the code examples in this Tutorial you will need to take some steps. If y
 - [Lazy](#lazy)
 - [Events](#events)
 
-## [Multi-project](#multi-project)
+### [Multi-project](#multi-project)
 
-## [Internal Access Modifier](#internal-access-modifier)
+### [Internal Access Modifier](#internal-access-modifier)
 
-## [NuGet Packages](#nuget-packages)
+### [NuGet Packages](#nuget-packages)
 
 ## Async, Parallel and Multi-Threading
 - [Threads](#threads)
@@ -398,7 +398,7 @@ In conclusion, enums and structs are both valuable in C# programming, but they s
 
 ## Multi-project 
 
-## Internal access modifier
+## Internal Access Modifier
 
 ## NuGet Packages
 
