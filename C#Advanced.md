@@ -61,12 +61,12 @@ When we use reference types we are passing around a reference to that object in 
 In C#, data types are categorized into two main groups: reference types and value types. Understanding the distinction between these two types is crucial for effective programming, as it influences how data is stored, accessed, and modified.
 
 Reference Types
-Reference types are stored in the heap memory and hold a reference (or pointer) to the actual data. When a reference type is passed to a method, a reference to the original object is sent, allowing modifications within the method to affect the original object. Common examples of reference types in C# include classes, arrays, and strings.
+Reference types are stored in the heap memory and hold a reference (or pointer) to the actual data. When a reference type is passed to a method, a reference to the original object is sent, allowing modifications within the method to affect the original object. Common examples of reference types in C# include classes, interfaces, delegates, records arrays, and strings.
 
 In the provided code, the list myList is a reference type, which demonstrates that modifications made within the ModifyListReference method affect the original list. This behavior emphasizes the need to understand how reference types work when designing applications.
 
 Value Types
-Value types, on the other hand, are stored directly in the stack memory and contain the actual data. When a value type is passed to a method, a copy of the data is made. As a result, changes made to the parameter within the method do not affect the original value outside of the method. Common examples of value types include primitive data types such as integers, floats, and structs.
+Value types, on the other hand, are stored directly in the stack memory and contain the actual data. When a value type is passed to a method, a copy of the data is made. As a result, changes made to the parameter within the method do not affect the original value outside of the method. Common examples of value types include primitive data types such as integers, floats, bool, char and structs.
 
 In the example, the string myString represents a value type, showcasing how the ModifyValue method does not alter the original string when passed as an argument. Additionally, the code demonstrates how the ref keyword can be used to pass a value type by reference, allowing the method to modify the original data.
 
