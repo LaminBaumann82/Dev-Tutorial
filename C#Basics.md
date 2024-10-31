@@ -1,10 +1,13 @@
-# C# Programming Basics
+# C# Basics
+
 
 This document provides an overview of the fundamental concepts in C# programming, including variables, data types, control structures, and more.
 
----
+If you run in to problems or unexpected behaviour please check out the [SetUpVisualStudio](SetUpVisualStudio.md) Tutorial.
 
-## Table of Contents
+
+
+## Table of Content
 1. [Variables](#variables)
 2. [Data Types](#data-types)
 3. [Control Structures](#control-structures)
