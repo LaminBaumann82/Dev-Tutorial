@@ -38,11 +38,10 @@ To run the code examples in this Tutorial you will need to take some steps. If y
 - [Lazy](#lazy)
 - [Events](#events)
 
-### [Multi-project](#multi-project)
-
-### [Internal Access Modifier](#internal-access-modifier)
-
-### [NuGet Packages](#nuget-packages)
+## Handle Multiple Projects and external Libraries
+- [Multi-project](#multi-project)
+- [Internal Access Modifier](#internal-access-modifier)
+- [NuGet Packages](#nuget-packages)
 
 ## Async, Parallel and Multi-Threading
 - [Threads](#threads)
