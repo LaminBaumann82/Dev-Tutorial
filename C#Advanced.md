@@ -370,6 +370,40 @@ Use Enums when you need a fixed set of related named constants for better readab
 Use Structs when you want to encapsulate related data in a single value type, especially for small, simple data structures that benefit from value semantics.
 In conclusion, enums and structs are both valuable in C# programming, but they should be chosen based on the specific requirements of the task at hand.
 ### Equality Problem
+
+Compare Objects in c# can be challenging. if you want to campare two classes with the "==" operator the outcome might not be as you expected. 
+```c#
+public class ClassCompareTest
+{
+    public void run()
+    {
+        Console.WriteLine("Testing comparison of two classes");
+        var instanceOfExampleClass1 = new ExampleClass("TheTextValue", 123456);
+        var instanceOfExampleClass2 = new ExampleClass("TheTextValue", 123456);
+        Console.WriteLine("Compare Classes: ");
+        Console.WriteLine("are those 2 classes equal when compared with \"==\"?");
+        Console.WriteLine($"Answer: {instanceOfExampleClass1 == instanceOfExampleClass2}");
+        Console.WriteLine("are those 2 classes equal when compared with .Equals()?");
+        Console.WriteLine($"Answer: {instanceOfExampleClass1.Equals(instanceOfExampleClass2)}");
+
+
+    }
+    public class ExampleClass
+    {
+        public string Text { get; set; } = "standard Value";
+        public int Number { get; set; } = 0;
+
+        public ExampleClass(string Text, int Number)
+        {
+            this.Text = Text;
+            this.Number = Number;
+        }
+    }
+
+}
+
+```
+
 ### Records
 
 ## OOP Object-Oriented Programming
