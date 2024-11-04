@@ -544,8 +544,86 @@ public class InterfaceExample
 
 ```
 ### Abstract Classes
+Abstract Classes in C# can define some base functionality. They can not be instantiated. Like Interfaces a class can inherit from multiple abstract classes or interfaces. An Abstract class can inherit from another Abstract Class. 
+```c#
+public class AbstractClassesExample
+{
+    public void RunExample()
+    {
+        // Instantiate MyClass, which directly implements AbstractBaseClass and IMyInterface
+        MyClass myClass = new MyClass();
+        myClass.Print();               // Calls Print() from AbstractBaseClass
+        myClass.AbstractPrint();       // Calls overridden AbstractPrint() in MyClass
+        myClass.PrintInterface();      // Calls PrintInterface() from MyClass, as required by IMyInterface
 
+        // Instantiate FinalClass, which inherits from DerivedAbstractClass
+        FinalClass finalClass = new FinalClass();
+        finalClass.Print();            // Calls Print() from AbstractBaseClass
+        finalClass.AbstractPrint();    // Calls overridden AbstractPrint() in FinalClass
+        finalClass.PrintInterface();   // Calls overridden PrintInterface() in FinalClass
+    }
 
+    // Define an abstract base class with one concrete method and one abstract method
+    public abstract class AbstractBaseClass
+    {
+        // Concrete method with implementation
+        public void Print()
+        {
+            Console.WriteLine("This is the Print() from the AbstractBaseClass");
+        }
+
+        // Abstract method - must be implemented in any non-abstract derived class
+        public abstract void AbstractPrint();
+    }
+
+    // MyClass is a concrete class that inherits from AbstractBaseClass and implements IMyInterface
+    public class MyClass : AbstractBaseClass, IMyInterface
+    {
+        // Override the abstract method from AbstractBaseClass
+        public override void AbstractPrint()
+        {
+            Console.WriteLine("This is the AbstractPrint() from the override in MyClass");
+        }
+
+        // Implement the method required by IMyInterface
+        public void PrintInterface()
+        {
+            Console.WriteLine("This is the PrintInterface() from MyClass");
+        }
+    }
+
+    // Define an abstract derived class that inherits from AbstractBaseClass and implements IMyInterface
+    // This class does not need to implement AbstractPrint() because it remains abstract
+    public abstract class DerivedAbstractClass : AbstractBaseClass, IMyInterface
+    {
+        // Define PrintInterface as abstract, leaving the implementation to concrete subclasses e.g. Our FinalClass
+        public abstract void PrintInterface();
+    }
+
+    // FinalClass is a concrete class that inherits from DerivedAbstractClass
+    public class FinalClass : DerivedAbstractClass
+    {
+        // Override the abstract method from AbstractBaseClass
+        public override void AbstractPrint()
+        {
+            Console.WriteLine("This is the AbstractPrint() from the override in FinalClass");
+        }
+
+        // Override the abstract PrintInterface() method from DerivedAbstractClass
+        public override void PrintInterface()
+        {
+            Console.WriteLine("This is the PrintInterface() from the override in FinalClass");
+        }
+    }
+
+    // Define an interface with a single method that classes must implement
+    public interface IMyInterface
+    {
+        void PrintInterface();
+    }
+}
+
+```
 ### Protected and Virtual
 ### Composition
 ### Generics
