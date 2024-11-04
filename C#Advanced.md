@@ -16,6 +16,7 @@ To run the code examples in this Tutorial you will need to take some steps. If y
 - [Records](#records)
 
 ## OOP Object-Oriented Programming
+- [Access Modifiers](#access-modifiers)
 - [Inheritance](#inheritance)
 - [Interfaces](#interfaces)
 - [Abstract Classes](#abstract-classes)
@@ -409,6 +410,36 @@ public class ClassCompareTest
 
 
 ## OOP Object-Oriented Programming
+### Access Modifiers
+
+In C# are multiple Access modifiers which we will look at in deept. 
+
+#### Public
+Code in any assembly can access this type or member. The accessibility level of the containing type controls the accessibility level of public members of the type.
+#### Private
+Only code declared in the same class or struct can access this member.
+#### Protected
+Only code in the same class or in a derived class can access this type or member.
+#### Internal
+Only code in the same assembly can access this type or member.
+#### Protected internal
+Only code in the same assembly or in a derived class in another assembly can access this type or member.
+#### Private internal
+Only code in the same assembly and in the same class or a derived class can access the type or member.
+#### File
+Only code in the same file can access the type or member.
+
+| Caller's location                   | `public` | `protected internal` | `protected` | `internal` | `private protected` | `private` | `file` |
+|-------------------------------------|----------|-----------------------|-------------|------------|----------------------|-----------|--------|
+| Within the file                     | ✔️       | ✔️                    | ✔️          | ✔️         | ✔️                   | ✔️        | ✔️     |
+| Within the class                    | ✔️       | ✔️                    | ✔️          | ✔️         | ✔️                   | ✔️        | ❌     |
+| Derived class (same assembly)       | ✔️       | ✔️                    | ✔️          | ✔️         | ✔️                   | ❌        | ❌     |
+| Non-derived class (same assembly)   | ✔️       | ✔️                    | ❌          | ✔️         | ❌                   | ❌        | ❌     |
+| Derived class (different assembly)  | ✔️       | ✔️                    | ✔️          | ❌         | ❌                   | ❌        | ❌     |
+| Non-derived class (different assembly) | ✔️    | ❌                    | ❌          | ❌         | ❌                   | ❌        | ❌     |
+
+
+This whole Article about access modifiers is from [Learn Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)
 ### Inheritance
 ### Interfaces
 "In C#, classes can implement multiple interfaces. An interface in C# is a contract that defines a set of methods, properties, events, or indexers without providing their implementations. It specifies what a class should do, but not how it should do it. Any class that implements an interface agrees to provide the code for the members defined by that interface. This allows different classes to follow the same structure, enabling polymorphism and helping to build flexible, modular code.
