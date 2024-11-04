@@ -403,32 +403,58 @@ Compare Objects in c# can be challenging. if you want to campare two classes wit
 ```c#
 public class ClassCompareTest
 {
-    public void run()
+    public void RunExample()
     {
         Console.WriteLine("Testing comparison of two classes");
-        var instanceOfExampleClass1 = new ExampleClass("TheTextValue", 123456);
-        var instanceOfExampleClass2 = new ExampleClass("TheTextValue", 123456);
-        Console.WriteLine("Compare Classes: ");
+        // instantiated with constructor with explicite typing
+        ExampleClass instanceOfExampleClass1 = new ExampleClass("TheTextValue", 123456);
+        // instantiated with Object Initializer with implicite typing
+        var instanceOfExampleClass2 = new ExampleClass
+        {
+            Number = 123456,
+            Text = "TheTextValue",
+        };
         Console.WriteLine("are those 2 classes equal when compared with \"==\"?");
         Console.WriteLine($"Answer: {instanceOfExampleClass1 == instanceOfExampleClass2}");
         Console.WriteLine("are those 2 classes equal when compared with .Equals()?");
         Console.WriteLine($"Answer: {instanceOfExampleClass1.Equals(instanceOfExampleClass2)}");
-
-
+       
+        Console.WriteLine("And with the standard values?");
+        var instanceOfExampleClass3 = new ExampleClass();
+        var instanceOfExampleClass4 = new ExampleClass();
+        Console.WriteLine($"text of instanceOfExampleClass3 is: {instanceOfExampleClass3.Text}");
+        Console.WriteLine($"number of instanceOfExampleClass3 is: {instanceOfExampleClass3.Number}");
+        Console.WriteLine($"text of instanceOfExampleClass4 is: {instanceOfExampleClass4.Text}");
+        Console.WriteLine($"number of instanceOfExampleClass4 is: {instanceOfExampleClass4.Number}");
+        Console.WriteLine("Compare Classes: ");
+        Console.WriteLine("are those 2 classes equal when compared with \"==\"?");
+        Console.WriteLine($"Answer: {instanceOfExampleClass3 == instanceOfExampleClass4}");
+        Console.WriteLine("are those 2 classes equal when compared with .Equals()?");
+        Console.WriteLine($"Answer: {instanceOfExampleClass3.Equals(instanceOfExampleClass4)}");
     }
     public class ExampleClass
     {
         public string Text { get; set; } = "standard Value";
         public int Number { get; set; } = 0;
 
-        public ExampleClass(string Text, int Number)
+        public ExampleClass() 
+        { 
+        }   
+        public ExampleClass(string inputText, int inputNumber)
         {
-            this.Text = Text;
-            this.Number = Number;
+            Text = inputText;
+            Number = inputNumber;
         }
     }
 
 }
+
+    
+
+    
+    
+
+
 
 ```
 
