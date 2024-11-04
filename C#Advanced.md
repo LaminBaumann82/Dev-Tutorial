@@ -51,26 +51,35 @@ To run the code examples in this Tutorial you will need to take some steps. If y
 - [Async/Await](#asyncawait)
 - [Cancellation Token](#cancellation-token)
 
+---
 
 ## Reference Types and Value Types
 Classes are reference types in C#. The primitive types like int, float, double, string, bools are value types.
 When we use reference types we are passing around a reference to that object in the memory.
 
+---
+
 ### Basics Of Classes and Value Types
 
 In C#, data types are categorized into two main groups: reference types and value types. Understanding the distinction between these two types is crucial for effective programming, as it influences how data is stored, accessed, and modified.
 
-Reference Types
+
+
+#### Reference Types
 Reference types are stored in the heap memory and hold a reference (or pointer) to the actual data. When a reference type is passed to a method, a reference to the original object is sent, allowing modifications within the method to affect the original object. Common examples of reference types in C# include classes, interfaces, delegates, records arrays, and strings.
 
 In the provided code, the list myList is a reference type, which demonstrates that modifications made within the ModifyListReference method affect the original list. This behavior emphasizes the need to understand how reference types work when designing applications.
 
-Value Types
+
+
+#### Value Types
 Value types, on the other hand, are stored directly in the stack memory and contain the actual data. When a value type is passed to a method, a copy of the data is made. As a result, changes made to the parameter within the method do not affect the original value outside of the method. Common examples of value types include primitive data types such as integers, floats, bool, char and structs.
 
 In the example, the string myString represents a value type, showcasing how the ModifyValue method does not alter the original string when passed as an argument. Additionally, the code demonstrates how the ref keyword can be used to pass a value type by reference, allowing the method to modify the original data.
 
-Conclusion
+
+
+#### Conclusion
 This code illustrates the fundamental differences between reference types and value types in C#. Understanding these concepts is essential for developers to manage memory efficiently and avoid unintended side effects in their applications.
 
 ```c#
@@ -141,6 +150,9 @@ public sealed class BasicsToClassesAndValueTypes
 }
 
 ```
+
+---
+
 ### Enums
 The use of Enums should only be in cases where you have a fixed set of values that "never" change. Enums look like strings, but in fact, they are numeric values.
 
@@ -248,7 +260,10 @@ The use of Enums should only be in cases where you have a fixed set of values th
     }
 }
 
- ``` 
+ ```
+
+---
+
 ### Structs
 
 Structs are user-defined types that are categorized as value types, which means they are stored directly in memory rather than through a reference. This distinction sets them apart from classes, which are reference types and involve a more complex memory allocation process.
@@ -345,8 +360,13 @@ public class StructsDemo
 }
 
 ```
+
+---
+
 ### Enum vs Struct
 Enums and structs are both useful constructs in C#, but they serve different purposes and are used in different scenarios. Here’s a brief overview of when to use each:
+
+---
 
 When to Use Enums
 Fixed Set of Related Constants: Use enums when you need a named group of related constants that represent discrete values. For example, days of the week, colors, or states of an application.
@@ -357,6 +377,8 @@ Type Safety: Enums provide type safety by restricting the variable to one of the
 
 Comparative Operations: Enums can be easily compared using equality or other operators, making them suitable for situations where you need to switch or compare discrete values.
 
+---
+
 When to Use Structs
 Grouping Related Data: Use structs when you need to group multiple related fields into a single entity. For example, a struct could represent a point in 2D space with X and Y coordinates.
 
@@ -366,10 +388,15 @@ Simple Data Structures: Structs are best suited for small, simple data structure
 
 Immutability: If you want to create an immutable type (i.e., its values cannot be changed after creation), structs are a good choice when combined with read-only properties.
 
+---
+
 Summary
 Use Enums when you need a fixed set of related named constants for better readability and type safety.
 Use Structs when you want to encapsulate related data in a single value type, especially for small, simple data structures that benefit from value semantics.
 In conclusion, enums and structs are both valuable in C# programming, but they should be chosen based on the specific requirements of the task at hand.
+
+---
+
 ### Equality Problem
 
 Compare Objects in c# can be challenging. if you want to campare two classes with the "==" operator the outcome might not be as you expected. 
@@ -405,9 +432,11 @@ public class ClassCompareTest
 
 ```
 
+---
+
 ### Records
 
-
+---
 
 ## OOP Object-Oriented Programming
 ### Access Modifiers
@@ -415,20 +444,41 @@ public class ClassCompareTest
 In C# are multiple Access modifiers which we will look at in deept. 
 
 #### Public
-Code in any assembly can access this type or member. The accessibility level of the containing type controls the accessibility level of public members of the type.
+ Code in any assembly can access this type or member. The accessibility level of the containing type controls the accessibility level of public members of the type.
+
+---
+
 #### Private
-Only code declared in the same class or struct can access this member.
+ Only code declared in the same class or struct can access this member.
+
+---
+
 #### Protected
 Only code in the same class or in a derived class can access this type or member.
+
+---
+
 #### Internal
 Only code in the same assembly can access this type or member.
+
+---
+
 #### Protected internal
 Only code in the same assembly or in a derived class in another assembly can access this type or member.
+
+---
+
 #### Private internal
 Only code in the same assembly and in the same class or a derived class can access the type or member.
+
+---
+
 #### File
 Only code in the same file can access the type or member.
 
+---
+
+#### Overview
 | Caller's location                   | `public` | `protected internal` | `protected` | `internal` | `private protected` | `private` | `file` |
 |-------------------------------------|----------|-----------------------|-------------|------------|----------------------|-----------|--------|
 | Within the file                     | ✔️       | ✔️                    | ✔️          | ✔️         | ✔️                   | ✔️        | ✔️     |
@@ -440,7 +490,13 @@ Only code in the same file can access the type or member.
 
 
 This whole Article about access modifiers is from [Learn Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)
+
+---
+
 ### Inheritance
+
+---
+
 ### Interfaces
 "In C#, classes can implement multiple interfaces. An interface in C# is a contract that defines a set of methods, properties, events, or indexers without providing their implementations. It specifies what a class should do, but not how it should do it. Any class that implements an interface agrees to provide the code for the members defined by that interface. This allows different classes to follow the same structure, enabling polymorphism and helping to build flexible, modular code.
 ```c#
