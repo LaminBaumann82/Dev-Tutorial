@@ -406,10 +406,146 @@ public class ClassCompareTest
 
 ### Records
 
+
+
 ## OOP Object-Oriented Programming
 ### Inheritance
 ### Interfaces
+"In C#, classes can implement multiple interfaces. An interface in C# is a contract that defines a set of methods, properties, events, or indexers without providing their implementations. It specifies what a class should do, but not how it should do it. Any class that implements an interface agrees to provide the code for the members defined by that interface. This allows different classes to follow the same structure, enabling polymorphism and helping to build flexible, modular code.
+```c#
+
+
+public class InterfaceExample
+{
+    public void RunExample()
+    {
+        Console.WriteLine("Start of interface example:");
+        House myHouse = new House(4, false); // set number of windows to 4 and inhabitance to false
+        Console.WriteLine($"This House has {myHouse.NumberOfWindows} windows.");
+        Console.WriteLine("Check window status:");
+        CheckWindows(myHouse);
+        Console.WriteLine("Open window 3:");
+        myHouse.OpenWindow(3);
+        CheckWindows(myHouse);
+        Console.WriteLine("Open window 1:");
+        myHouse.OpenWindow(1);
+        CheckWindows(myHouse);
+        Console.WriteLine("Close window 3:");
+        myHouse.CloseWindow(3);
+        CheckWindows(myHouse);
+        Console.WriteLine("Inhabitance");
+        Console.WriteLine("Check if this house is inhabited:");
+        CheckInhabitance(myHouse);
+        Console.WriteLine("Peter moves in.");
+        myHouse.MoveIn();
+        CheckInhabitance(myHouse);
+        Console.WriteLine("Peter moves out.");
+        myHouse.MoveOut();
+        CheckInhabitance(myHouse);
+        Console.WriteLine("Call the MoveOut() method again:");
+        myHouse.MoveOut(); 
+
+    }
+
+    void CheckWindows(IHasWindows windows)
+    {
+        for (int i = 0; i < windows.NumberOfWindows; i++)
+        {
+            Console.WriteLine($"Window {i} is open: {windows.IsWindowOpen(i)}");
+        }
+    }
+    void CheckInhabitance(IIsInhabited building)
+    {
+        Console.WriteLine($"is this house inhabited? {building.IsInhabited}");
+    }
+    public class House : IHasWindows, IIsInhabited
+    {
+        private readonly bool[] _windows; // readonly makes sure the array is only set once. the fields in the array can still be modified.
+        // next line: not necessary because it is implementet with a private setter on line 58.
+        //private readonly bool _isInhabited; 
+
+        public House(int numberOfWindows, bool isInhabited)
+        {
+                
+            _windows = new bool[numberOfWindows]; // Create a new boolean array with all values initially set to false.
+            //_isInhabited = isInhabited;    _isInhabited field is not needed because the inhabitance status is managed by the IsInhabited property.
+            IsInhabited = isInhabited;
+                
+        }
+        public int NumberOfWindows => _windows.Length;
+        public bool IsInhabited { get; private set; } // The Property from the interface was get only. we added the private set so we can change the status. 
+        public void OpenWindow(int index)
+        {
+            // We are not checking if index is out of range. This could lead to an IndexOutOfRangeException if an invalid index is passed.
+            //_windows[index] = true;
+            //Better solution:
+            if (index >= 0 && index < _windows.Length)
+                _windows[index] = true;
+            else
+                Console.WriteLine($"Invalid window index: {index}");
+        }
+        public void CloseWindow(int index)
+        {
+            if (index >= 0 && index < _windows.Length)
+                _windows[index] = false;
+            else
+                Console.WriteLine($"Invalid window index: {index}");
+        }
+        public bool IsWindowOpen(int index)
+        {
+            if (index >= 0 && index < _windows.Length)
+                return _windows[index];
+            else
+            {
+                Console.WriteLine($"Invalid window index: {index}");
+                return false; // Or another default, depending on desired behavior
+            }
+        }
+
+        public void MoveIn()
+        {
+            if(IsInhabited)
+            {
+                Console.WriteLine("House is already inhabited");
+                return; 
+            }
+            IsInhabited = true;
+            Console.WriteLine("Someone moved in.");
+        }
+
+        public void MoveOut()
+        {
+            if (!IsInhabited)
+            {
+                Console.WriteLine("House is already empty.");
+                return;
+            }
+            IsInhabited = false;
+            Console.WriteLine("Someone moved out.");
+        }
+    }
+
+    public interface IHasWindows
+    {
+        int NumberOfWindows { get; }
+        void OpenWindow(int index);
+        void CloseWindow(int index);
+        bool IsWindowOpen(int index);
+    }
+
+    public interface IIsInhabited
+    {
+        bool IsInhabited { get;}
+        void MoveIn();
+        void MoveOut();
+    }
+}
+
+
+```
 ### Abstract Classes
+
+
 ### Protected and Virtual
 ### Composition
 ### Generics
