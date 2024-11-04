@@ -20,7 +20,7 @@ To run the code examples in this Tutorial you will need to take some steps. If y
 - [Inheritance](#inheritance)
 - [Interfaces](#interfaces)
 - [Abstract Classes](#abstract-classes)
-- [Protected and Virtual](#protected-and-virtual)
+- [Virtual](#virtual)
 - [Composition](#composition)
 - [Generics](#generics)
 - [Tuples](#tuples)
@@ -630,6 +630,9 @@ public class InterfaceExample
 
 
 ```
+
+---
+
 ### Abstract Classes
 Abstract Classes in C# can define some base functionality. They can not be instantiated. Like Interfaces a class can inherit from multiple abstract classes or interfaces. An Abstract class can inherit from another Abstract Class. 
 ```c#
@@ -711,36 +714,105 @@ public class AbstractClassesExample
 }
 
 ```
-### Protected and Virtual
+
+---
+
+### Virtual
+
+---
+
 ### Composition
+
+---
+
 ### Generics
+
+---
+
 ### Tuples
 
+---
+
 ## Binary and String Data
+
+
+
 ### Encoding / Decoding
+
+---
+
 ### Streams
+
+---
+
 ### Reading / Writing Files
+
+---
+
 ### Using and Disposable
+
+---
+
 ### XML and JSON
 
+---
+
 ## Methods and Functions
+
+
+
 ### Callbacks and Delegates
+
+---
+
 ### Extension Methods
+
+---
+
 ### LINQ
+
+---
+
 ### Lazy
+
+---
+
 ### Events
+
+---
 
 ## Multi-project 
 
+---
+
 ## Internal Access Modifier
+
+---
 
 ## NuGet Packages
 
+---
+
 ## Async, Parallel and Multi-Threading
+
+
+
 ### Threads
+
+---
+
 ### Background Workers
+
+---
+
 ### Task Objects
+
+---
+
 ### Async/Await
+
+---
+
 ### Cancellation Token
 
 
