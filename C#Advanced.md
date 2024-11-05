@@ -472,6 +472,31 @@ In C# are multiple Access modifiers which we will look at in deept.
 #### Public
  Code in any assembly can access this type or member. The accessibility level of the containing type controls the accessibility level of public members of the type.
 
+```c#
+public class Public
+{
+    public void RunExample()
+    {
+        OtherClass.Main(); // run the main method from OtherClass.
+    }
+
+    public class SomeClass
+    {
+        public int number = 133; // a public integer that can be accessed in another class.
+    }
+    
+    public class OtherClass
+    {
+        public static void Main()
+        {
+            SomeClass myClass = new SomeClass(); // Create an instance of SomeClass.
+            Console.WriteLine($"The value from \"number\" in SomeClass is: {myClass.number}"); // access the public integer from the class.
+        } 
+    }
+}
+
+```
+
 ---
 
 #### Private
@@ -744,6 +769,67 @@ public class AbstractClassesExample
 ---
 
 ### Virtual
+The keyword virtual provides a hybrid approach between fully abstract and non-abstract methods. While abstract methods are declared without a function body and must be implemented in derived classes, virtual allows us to define a complete function in the base class that can optionally be overridden in derived classes. This means we can either use the original function as defined in the base class or override it with new behavior in a derived class.
+
+```c#
+
+public class Virtual
+{
+    public void RunExample()
+    {
+        FirstDerivedClass myFirstDerivedClass = new FirstDerivedClass();
+        myFirstDerivedClass.PrintInBase();          // The override in the derived class.
+        myFirstDerivedClass.VirtualPrintInBase();   // The override in the derived class.
+        SecondDerivedClass mySecondDerivedClass = new SecondDerivedClass();
+        mySecondDerivedClass.PrintInBase2();        // The override in the derived class.
+        mySecondDerivedClass.VirtualPrintInBase2(); // The original method from the base class.
+    }
+
+    public abstract class FirstBaseClass
+    {
+        public abstract void PrintInBase(); // Abstract method without function body
+
+        public virtual void VirtualPrintInBase() // Virtual method with function body
+        {
+            Console.WriteLine("VirtualPrintInBase");
+        }
+    }
+
+    public class FirstDerivedClass : FirstBaseClass
+    {
+        public override void PrintInBase() // Override the abstract method as we must.
+        {
+            Console.WriteLine("PrintInBase() override in FirstDerivedClass");  
+        }
+
+        public override void VirtualPrintInBase() // Override the virtual method as we can.
+        {
+            Console.WriteLine("VirtualPrintInBase override in FirstDerivedClass");
+        }
+    }
+
+    public abstract class SecondBaseClass
+    {
+        public abstract void PrintInBase2();
+        public virtual void VirtualPrintInBase2() 
+        {
+            Console.WriteLine("VirtualPrintInBase");
+        }
+    }
+
+    public class SecondDerivedClass : SecondBaseClass
+    {
+        public override void PrintInBase2() // And again the abstract method override
+        {
+            Console.WriteLine("PrintInBase() override in SecondDerivedClass");
+
+            // In this class we don't have an override for the virtual method. We use the defined method body from the base class.
+        }
+    }
+}
+
+
+```
 
 ---
 
