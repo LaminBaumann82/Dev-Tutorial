@@ -535,6 +535,71 @@ public class Private
 #### Protected
 Only code in the same class or in a derived class can access this type or member.
 
+```c#
+
+public class Protected
+{
+    public void RunExample()
+    {
+        Console.WriteLine("Output from OtherClass.Main()`: ");
+        OtherClass.Main();
+        Console.WriteLine("Output from DerivedClass.Main()`: ");
+        DerivedClass.Main();
+    }
+    public class ClassWithProtected
+    {
+        private int Number1 = 1;
+        public int Number2 = 2;
+        protected int Number3 = 3;
+    }
+    public class OtherClass 
+    {
+        public static void Main()
+        {
+            ClassWithProtected myClass = new ClassWithProtected(); // Create an instance of SomeClass.
+
+            // Access the private integer from the class is not possible due to the private keyword.
+            // Console.WriteLine($"The value from \"Number1\" in ClassWithProtected is: {ClassWithPrivate.Number1}"); // this will not compile.
+
+            Console.WriteLine($"The value from \"Number2\" in ClassWithProtected is: {myClass.Number2}"); // access the public integer from the class works
+
+            // Access the protected integer is not possible due to the protected keyword and the OtherClass is not derived from ClassWith Proteced.
+            // Console.WriteLine($"The value from \"Number3\" in ClassWithProtected is: {myClass.Number3}");
+        }
+    }
+
+    public class DerivedClass : ClassWithProtected
+    {
+        public int AnotherNumber3;
+        public DerivedClass()
+        {
+            // We can access the private Number3 directly in the constructor of the DerivedClass. 
+            AnotherNumber3 = base.Number3; // "base" is greyed out because C# already knows that Number3 is from the base class.
+            // In this situation it is better to write the following:
+            AnotherNumber3 = Number3;
+        }
+    
+        public static void Main()
+        {
+            ClassWithProtected myClass2 = new ClassWithProtected(); // Create an instance of ClassWithProtected.
+
+            // Access the private integer from the class is not possible due to the private keyword.
+            // Console.WriteLine($"The value from \"Number1\" in ClassWithProtected is: {myClass2.Number1}"); // This will not compile.
+
+            Console.WriteLine($"The value from \"Number2\" in ClassWithProtected is: {myClass2.Number2}"); // Access the public integer from the class works.
+
+            // This wont work:
+            // ClassWithProtected myClassWithProtected = new ClassWithProtected();
+            // Console.WriteLine($"The value from \"Number3\" in ClassWithProtected is: {classWithProtected.Number3}");
+
+            // Access the protected "Number3" only works in the derived class.
+            DerivedClass myDerivedClass = new DerivedClass(); // Create an instance from the DerivedClass witch is derived from ClassWithProtected
+            Console.WriteLine($"The value from \"Number3\" in ClassWithProtected is: {myDerivedClass.Number3}"); 
+        }
+    }
+}
+```
+
 ---
 
 #### Internal
