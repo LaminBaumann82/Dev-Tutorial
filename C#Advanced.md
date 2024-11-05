@@ -482,7 +482,7 @@ public class Public
 
     public class SomeClass
     {
-        public int number = 133; // a public integer that can be accessed in another class.
+        public int Number = 133; // a public integer that can be accessed in another class.
     }
     
     public class OtherClass
@@ -490,7 +490,7 @@ public class Public
         public static void Main()
         {
             SomeClass myClass = new SomeClass(); // Create an instance of SomeClass.
-            Console.WriteLine($"The value from \"number\" in SomeClass is: {myClass.number}"); // access the public integer from the class.
+            Console.WriteLine($"The value from \"Number\" in SomeClass is: {myClass.Number}"); // access the public integer from the class.
         } 
     }
 }
@@ -501,6 +501,34 @@ public class Public
 
 #### Private
  Only code declared in the same class or struct can access this member.
+
+```c#
+public class Private
+{
+    public void RunExample()
+    {
+        OtherClass.Main();
+    }
+    public class ClassWithPrivate
+    {
+        private int Number1 = 1;
+        public int Number2 = 2;
+    }
+    public class OtherClass
+    {
+        public static void Main()
+        {
+            ClassWithPrivate myClass = new ClassWithPrivate(); // Create an instance of SomeClass.
+            
+            // access the private integer from the class is not possible due to the private keyword.
+            // Console.WriteLine($"The value from \"number\" in SomeClass is: {ClassWithPrivate.number1}"); // this will not compile.
+            
+            Console.WriteLine($"The value from \"Number\" in SomeClass is: {myClass.Number2}"); // access the public integer from the class works
+        }
+    }
+}
+```
+
 
 ---
 
