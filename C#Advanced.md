@@ -521,9 +521,9 @@ public class Private
             ClassWithPrivate myClass = new ClassWithPrivate(); // Create an instance of SomeClass.
             
             // access the private integer from the class is not possible due to the private keyword.
-            // Console.WriteLine($"The value from \"number\" in SomeClass is: {ClassWithPrivate.number1}"); // this will not compile.
+            // Console.WriteLine($"The value from \"Number1\" in SomeClass is: {ClassWithPrivate.Number1}"); // this will not compile.
             
-            Console.WriteLine($"The value from \"Number\" in SomeClass is: {myClass.Number2}"); // access the public integer from the class works
+            Console.WriteLine($"The value from \"Number2\" in SomeClass is: {myClass.Number2}"); // access the public integer from the class works
         }
     }
 }
