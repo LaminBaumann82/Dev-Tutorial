@@ -605,6 +605,61 @@ public class Protected
 #### Internal
 Only code in the same assembly can access this type or member.
 
+
+The class with a protected and an internal property is very simple:
+```c#
+public class Internal
+{
+    protected int Number1 = 1;
+    internal int Number2 = 2;
+}
+```
+
+In the same assembly with non derived class:
+```c#
+public class Internal2
+{
+    public void RunExample()
+    {
+        Internal myInternal = new Internal();
+        // We instantiate Internal itself but we don't have access to the protected Property. Only in derived classes.
+        //Console.WriteLine($"The protected number from the Internal class is: {myInternal.Number1}");
+        // In the same assembly we instantiate the Internal class and we have access to the internal Property.
+        Console.WriteLine($"The internal number from the Internal class is: {myInternal.Number2}");
+    }
+}
+```
+
+In the same assembly with a derived class:
+```c#
+public class Internal3 : Internal
+{
+    public void RunExample()
+    {
+        Internal3 myInternal3 = new Internal3();
+        // Because we are in the same assembly and the Internal3 class is derived from Internal we have access to both.
+        Console.WriteLine($"The protected number from the Internal class is: {myInternal3.Number1}");
+        Console.WriteLine($"The internal number from the Internal class is: {myInternal3.Number2}");
+    }
+}
+```
+
+In another assembly with a derived class:
+```c#
+public class InternalInOtherAssembly : Internal
+{
+    public void RunExample()
+    {
+        InternalInOtherAssembly myInternal2 = new InternalInOtherAssembly();
+        // In this case we have access to the protected Property because we derive from Internal but since we are in another assembly
+        // we don't have access to the internal.
+        Console.WriteLine($"The protected number from the Internal class is: {myInternal2.Number1}");
+        // This wont compile:
+        // Console.WriteLine($"The internal number from the Internal class is: {myInternal2.Number2}");
+    }
+}
+```
+
 ---
 
 #### Protected internal
