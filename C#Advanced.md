@@ -470,7 +470,7 @@ public Record MyRecord2(int number, string text);
 // it is possible to mix this two variants like this:
 public Record MyRecord3(int number, string text)
 {
-    public string additionalText { get; init; }
+    public string additionalText { get; set; }
 }
 
 
