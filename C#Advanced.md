@@ -448,20 +448,62 @@ public class ClassCompareTest
     }
 
 }
+```
+As you can see comparison can be realy chanllanging with objects. You can run into false results if you don't pay attantion or put too less effort in the process. But help is on the way.
+---
 
-    
+### Records
 
-    
-    
+Records can help with the Equality Problem! A Record is a reference type but can be read / write like values. It is often used where DTO's (Data Transfer Objects) are needed.  Lets have a look.
+
+```c#
+// define a Record with properties. The init keyword is used to make the propertie imutalble. it is set once at object creation. Afterwards the value can not be changed. 
+public Record MyRecord1()
+{
+    public int number { get; init; }
+    public string text { get; init; }
+}
+
+// we can simplify this notation. note that even if we dont specificly use the keyword init is is still imutable. 
+public Record MyRecord2(int number, string text);
+
+// it is possible to mix this two variants like this:
+public Record MyRecord3(int number, string text)
+{
+    public string additionalText { get; init; }
+}
+
+
+
 
 
 
 ```
 
----
+So with this new type we can compare a reference type in the same way we compare a value type.
 
-### Records
+```c#
 
+MyRecord1 myfirstRecord = new(1, "aaa");
+
+
+
+// define a Record with properties
+public Record MyRecord1()
+{
+    public int number { get; set; }
+    public string text { get; set; }
+}
+
+// we can simplify this notation:
+public Record MyRecord2(int number, string text);
+
+// it is possible to mix this two variants like this:
+public Record MyRecord3(int number, string text)
+{
+    public string additionalText { get; set; }
+}
+```
 ---
 
 ## OOP Object-Oriented Programming
